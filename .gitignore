@@ -1,0 +1,36 @@
+# ========== Visual Studio / MSVC ==========
+.vs/
+*.suo
+*.user
+*.VC.db
+*.VC.opendb
+
+# ========== CMake build outputs ==========
+# 你的构建目录是 out/（不提交）
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+
+# ========== Binaries / debug artifacts ==========
+# 一般都在 out/ 里，但加上也没坏处
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.lib
+*.exp
+
+# ========== Runtime outputs (可选) ==========
+# 不想提交渲染输出图，就保持忽略
+framebuffer.tga
+
+# ========== OS junk ==========
+.DS_Store
+Thumbs.db
+
+# IMPORTANT:
+# 不要写：*.obj
+# 因为你的 obj/ 是模型资源目录（Wavefront .obj），需要提交
