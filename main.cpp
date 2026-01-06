@@ -2,6 +2,8 @@
 #include <iostream>
 #include "our_gl.h"
 #include "model.h"
+#include <cstdlib>
+#include <string>
 
 extern mat<4,4> ModelView, Perspective; // "OpenGL" state matrices and
 extern std::vector<double> zbuffer;     // the depth buffer
@@ -63,7 +65,7 @@ int main(int argc, char** argv) {
     init_perspective(norm(eye-center));                        // build the Perspective matrix
     init_viewport(width/16, height/16, width*7/8, height*7/8); // build the Viewport    matrix
     init_zbuffer(width, height);
-    TGAImage framebuffer(width, height, TGAImage::RGB, {177, 195, 209, 255});
+    TGAImage framebuffer(width, height, TGAImage::RGB, {0, 0, 0, 255});
 
     for (int m=1; m<argc; m++) {                    // iterate through all input objects
         Model model(argv[m]);                       // load the data
@@ -76,7 +78,7 @@ int main(int argc, char** argv) {
         }
     }
 
-    framebuffer.write_tga_file("framebuffer.tga");
+    framebuffer.write_tga_file(R"(C:\Users\007\Desktop\framebuffer.tga)");
     std::cerr << "CWD = " << std::filesystem::current_path().string() << "\n";
 
     return 0;
